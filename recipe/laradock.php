@@ -15,7 +15,8 @@ require_once __DIR__ . '/common.php';
 
 set('php_fpm_service', 'php7.2-fpm');
 set('php_fpm_command', 'echo "" | sudo -S /usr/sbin/service {{php_fpm_service}} reload'); // for setups like laravel forge
-set('php_fpm_command', "kill -USR2 $(ps -ef | grep '[p]hp-fpm: master' | awk '{print $2}')"); 
+set('php_fpm_command', "kill -USR2 $(ps -ef | grep '[p]hp-fpm: master' | awk '{print $2}')"); // for docker based setups with laradock or similar
+
 
 
 // Laravel shared dirs
